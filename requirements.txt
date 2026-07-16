@@ -1,0 +1,20 @@
+# Phase 1 - Core chat loop
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0
+httpx>=0.28.0
+pydantic>=2.11.0
+python-dotenv>=1.1.0
+jinja2>=3.1.0
+
+# Phase 2 - Voice (install later)
+# faster-whisper
+# piper-tts
+# openwakeword
+
+# Phase 3 - Tool calling (install later)
+# searxng client or brave-search
+
+# Phase 4 - Memory (install later)
+# lancedb
+# chromadb
+# sentence-transformers
