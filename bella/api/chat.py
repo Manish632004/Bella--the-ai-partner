@@ -29,6 +29,11 @@ class ChatResponse(BaseModel):
     session_id: str
 
 
+class ClearRequest(BaseModel):
+    """Request to clear chat history."""
+    session_id: str = Field(..., description="Session ID to clear")
+
+
 @router.post("/chat")
 async def chat(req: ChatRequest):
     """
@@ -80,8 +85,9 @@ async def _stream_response(messages: list[dict], conversation, session_id: str):
 
 
 @router.post("/chat/clear")
-async def clear_chat(session_id: str | None = None):
+async def clear_chat(req: ClearRequest):
     """Clear conversation history for a session."""
+    session_id = req.session_id
     if session_id:
         conversation_manager.delete(session_id)
         return {"status": "cleared", "session_id": session_id}

@@ -5,11 +5,14 @@ httpx>=0.28.0
 pydantic>=2.11.0
 python-dotenv>=1.1.0
 jinja2>=3.1.0
+python-multipart>=0.0.12
 
-# Phase 2 - Voice (install later)
-# faster-whisper
-# piper-tts
-# openwakeword
+# Phase 2 - Voice
+faster-whisper>=1.2.1
+piper-tts>=1.4.2
+openwakeword>=0.6.0
+customtkinter>=6.0.0
+sounddevice>=0.5.5
 
 # Phase 3 - Tool calling (install later)
 # searxng client or brave-search

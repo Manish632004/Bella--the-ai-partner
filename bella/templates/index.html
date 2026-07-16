@@ -19,9 +19,36 @@
                     <div class="header-subtitle">Local AI Assistant</div>
                 </div>
             </div>
-            <div class="header-status">
-                <div class="status-dot" id="status-dot"></div>
-                <span id="status-text">Connecting...</span>
+            <div class="header-actions">
+                <div class="voice-config-dropdown">
+                    <button class="btn-voice-settings" id="btn-voice-settings" title="Voice Settings">⚙️ Voice</button>
+                    <div class="voice-dropdown-content" id="voice-dropdown-content">
+                        <div class="dropdown-item">
+                            <label for="voice-engine">TTS Voice:</label>
+                            <select id="voice-engine">
+                                <option value="browser">Browser Native</option>
+                                <option value="local">Local Neural (Piper)</option>
+                                <option value="off" selected>Muted (Off)</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-item">
+                            <label for="stt-engine">STT Engine:</label>
+                            <select id="stt-engine">
+                                <option value="browser">Browser Native</option>
+                                <option value="local">Local Neural (Whisper)</option>
+                            </select>
+                        </div>
+                        <div class="dropdown-item">
+                            <label class="switch-label">
+                                <input type="checkbox" id="wakeword-toggle"> Wake Word ("Hey Jarvis")
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-status">
+                    <div class="status-dot" id="status-dot"></div>
+                    <span id="status-text">Connecting...</span>
+                </div>
             </div>
         </header>
 
@@ -53,6 +80,7 @@
                     autofocus
                 ></textarea>
                 <button class="btn-clear" id="btn-clear" title="Clear conversation">🗑</button>
+                <button class="btn-mic" id="btn-mic" title="Start voice command">🎤</button>
                 <button class="btn-send" id="btn-send" title="Send message">↑</button>
             </div>
             <div class="input-hint">
